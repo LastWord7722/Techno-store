@@ -3,6 +3,10 @@
 /public/build
 /public/dist
 /public/plugins
+/public/plugins/css
+/public/plugins/fonts
+/public/plugins/js
+/public/plugins/scss
 /public/hot
 /public/storage
 /storage/*.key
