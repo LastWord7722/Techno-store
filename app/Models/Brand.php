@@ -8,12 +8,20 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Brand extends Model
 {
-    use SoftDeletes, HasFactory;
+    use SoftDeletes;
+    use HasFactory;
 
 
     protected $table = 'brands';
 
-    protected $fillable = [
-        'title',
-        ];
+    protected $fillable = ['title'];
+
+    public function getSelfBrand() {
+        return self::get();
+    }
+
+
+
+
+
 }

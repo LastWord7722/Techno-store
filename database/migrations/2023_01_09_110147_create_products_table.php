@@ -20,6 +20,12 @@ return new class extends Migration
             $table->unsignedBigInteger('brand_id');
             $table->timestamps();
             $table->softDeletes();
+            
+            $table->index('category_id', 'product_category_idx');
+            $table->index('brand_id', 'product_brand_idx');
+
+            $table->foreign('category_id','category_id_fk')->on('categories')->references('id')->cascadeOnDelete();
+            $table->foreign('brand_id','brand_id_fk')->on('brands')->references('id')->cascadeOnDelete();
         });
     }
 

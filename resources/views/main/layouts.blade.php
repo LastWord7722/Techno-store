@@ -191,7 +191,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown-list"> <a href="#0"> <span>Pages</span> <span class="menuarrow"> <i
+                    <li class="dropdown-list"> <a href="#0"> <span>Pages</span> <span class="menuarrow" > <i
                                         class="flaticon-next-1"></i> </span> </a>
                         <ul class=" dropdown ">
                             <li><a href="about-us.html"> About Us </a></li>

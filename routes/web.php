@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 use  App\Http\Controllers\Main\MainController;
 
@@ -14,8 +17,26 @@ use  App\Http\Controllers\Main\MainController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/main', [MainController::class, 'index'])->name('main');
+// MAIN
+Route::get('/', [MainController::class, 'index'])->name('main');
+
+//ADMIN
+Route::group(['prefix'=> 'admin', 'namespace' => 'admin',],function(){
+
+    //Brand
+    Route::group(['prefix' => 'brand', 'namespace'=>'brand'], function (){
+        Route::get('/', [BrandController::class, 'index'])->name('admin.brand.index');
+    });
+
+    //CATEGORY
+    Route::group(['prefix' => 'category', 'namespace'=> 'category'], function (){
+        Route::get('/', [CategoryController::class, 'index'])->name('admin.category.index');
+    });
+
+    //PRODUCT
+    Route::group(['prefix' => 'product', 'namespace' => 'product'], function (){
+        Route::get('/', [ProductController::class, 'index'])->name('admin.product.index');
+    });
+
+});
