@@ -1,7 +1,7 @@
 @extends('admin.layouts.layouts')
 
 @section('content_admin')
-    всё бренды
+    всё бренды11
     <div class=" mt-5 ml-5 row col-md-12">
     @foreach($brends as $brend)
         <p>{{$brend->id .') '. $brend->title}}</p>
