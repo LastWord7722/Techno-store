@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     @vite(['resources/css/app.css'])
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1 ">
     <title>AdminLTE 3 | Dashboard</title>
@@ -70,18 +72,19 @@
             </li>
         </ul>
     </nav>
+</div>
     <!-- /.navbar -->
     <!-- Main Sidebar Container -->
    @include('admin.layouts.sidebar')
 
-    <section class="content">
+
     <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             @yield('content_admin')
         </div>
-    </section>
+
         <!-- /.content -->
-    </div>
+
 
 
     <!-- Control Sidebar -->
@@ -106,7 +109,7 @@
 <script src={{asset("plugins/LTE/chart.js/Chart.min.js")}}></script>
 
 <!-- jQuery Knob Chart -->
-<script src={{asset("plugins/LTE/jquery-knob/jquery.knob.min.js")}}></script>
+
 
 <!-- Tempusdominus Bootstrap 4 -->
 <script src={{asset("plugins/LTE/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js")}}></script>

@@ -26,7 +26,13 @@ Route::group(['prefix'=> 'admin', 'namespace' => 'admin',],function(){
 
     //Brand
     Route::group(['prefix' => 'brand', 'namespace'=>'brand'], function (){
+
         Route::get('/', [BrandController::class, 'index'])->name('admin.brand.index');
+        Route::get('/create', [BrandController::class, 'create'])->name('admin.brand.create');
+        Route::POST('/', [BrandController::class, 'store'])->name('admin.brand.store');
+        Route::get('/{brand}/show',[BrandController::class,'show'])->name('admin.brand.show');
+        Route::get('/{brand}/edit',[BrandController::class,'edit'])->name('admin.brand.edit');
+        Route::PATCH('/{brand}',[BrandController::class,'update'])->name('admin.brand.update');
     });
 
     //CATEGORY
