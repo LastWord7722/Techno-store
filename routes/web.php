@@ -33,11 +33,19 @@ Route::group(['prefix'=> 'admin', 'namespace' => 'admin',],function(){
         Route::get('/{brand}/show',[BrandController::class,'show'])->name('admin.brand.show');
         Route::get('/{brand}/edit',[BrandController::class,'edit'])->name('admin.brand.edit');
         Route::PATCH('/{brand}',[BrandController::class,'update'])->name('admin.brand.update');
+        Route::delete('/{brand}',[BrandController::class,'destroy'])->name('admin.brand.destroy');
     });
 
     //CATEGORY
     Route::group(['prefix' => 'category', 'namespace'=> 'category'], function (){
+
         Route::get('/', [CategoryController::class, 'index'])->name('admin.category.index');
+        Route::get('/create', [CategoryController::class, 'create'])->name('admin.category.create');
+        Route::POST('/', [CategoryController::class, 'store'])->name('admin.category.store');
+        Route::get('/{category}/show',[CategoryController::class,'show'])->name('admin.category.show');
+        Route::get('/{category}/edit',[CategoryController::class,'edit'])->name('admin.category.edit');
+        Route::PATCH('/{category}',[CategoryController::class,'update'])->name('admin.category.update');
+        Route::delete('/{category}',[CategoryController::class,'destroy'])->name('admin.category.destroy');
     });
 
     //PRODUCT

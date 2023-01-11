@@ -2,10 +2,15 @@
 
 
 @section('content_admin')
-    всё категори11
-<div class=" mt-5 ml-5 row col-md-12">
+
+    <div class="m-lg-5">
+        <a class="btn btn-info" href={{route('admin.category.create')}}> Cоздать</a>
+    </div>
+
+    всё категори
+<div class=" mt-5 ml-5 col-md-12">
     @foreach($categories as $category)
-        <p>{{$category->id .') '. $category->title}}</p>
+        <a href="{{route('admin.category.show', $category->id)}}">{{$category->id .') '. $category->title}}</a>
     @endforeach
 </div>
 @endsection

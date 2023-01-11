@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('brand_id');
+            $table->string('slug')->nullable();
+            $table->string('image')->nullable();
+            $table->decimal('price','10','2',true)->default(0); // разобраться с этим полем 
             $table->timestamps();
             $table->softDeletes();
             

@@ -3,14 +3,14 @@
 @section('content_admin')
 
     <div class=" mt-5 ml-5 col-md-12">
-        {{$brand->id .')'. $brand->title}}
+        {{$category->id .')'. $category->title}}
     </div>
 
     <div class="flex-row  mt-3 m-lg-5">
-        <a class="btn btn-info" href="{{route('admin.brand.edit', $brand->id)}} "> Редактировать </a>
-        <a class="btn btn-info" href="{{ route('admin.brand.index') }} "> Назад</a>
+        <a class="btn btn-info" href="{{route('admin.category.edit', $category->id)}} "> Редактировать </a>
+        <a class="btn btn-info" href="{{ route('admin.category.index') }} "> Назад</a>
 
-        <form method="post" action="{{route('admin.brand.destroy', $brand->id)}}">
+        <form method="post" action="{{route('admin.category.destroy', $category->id)}}">
             @csrf
             @method('delete')
             <button type="submit" class="btn btn-danger">Удалить</button>
