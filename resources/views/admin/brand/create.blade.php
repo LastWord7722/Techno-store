@@ -2,7 +2,7 @@
 
 @section('content_admin')
 
-    <form method="post" action="{{route('admin.brand.store')}}">
+    <form  action="{{route('admin.brand.store')}}" method="post" enctype="multipart/form-data" >
         @csrf
         @method('POST')
         <div class="col-md-5 mt-0 m-lg-5">
@@ -11,9 +11,13 @@
                     <h3 class="card-title">Добавление бренда</h3>
                 </div>
                 <div class="card-body">
+                    <label> Название бренда</label>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Название бренда</label>
                         <input type="text" name="title" class="form-control" placeholder="Введите название бренда">
+                    </div>
+                    <label> Выберите фото для бренда</label>
+                    <div class="card-body img-fluid">
+                        <input type="file" name="image">
                     </div>
                 </div>
             </div>

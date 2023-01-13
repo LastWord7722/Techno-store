@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 
 class BrandController extends Controller
@@ -25,8 +26,10 @@ class BrandController extends Controller
 
         $data = $request->validate([
             'title' => 'required|min:2|max:50',
-            'image' => 'required|file'
+            'image' => 'image|required'
         ]);
+
+       $data['image'] = Storage::disk('public')->put('/images/brand', $data['image']);
 
         $brand->create($data);
 
@@ -46,8 +49,17 @@ class BrandController extends Controller
     public function update(Request $request, Brand $brand){
 
         $data = $request->validate([
-            'title' => 'required|min:2|max:50'
+            'title' => 'min:2|max:50',
+            'image' => ''
         ]);
+
+        $NewImage = $request->Hasfile('image');
+
+
+        if($NewImage === true){
+            Storage::disk('public')->delete($data['image']);
+            $data['image'] = Storage::disk('public')->put('images/brand', $data['image']);
+        }
 
         $brand->update($data);
         return redirect()->back();
