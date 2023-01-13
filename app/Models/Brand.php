@@ -14,7 +14,10 @@ class Brand extends Model
 
     protected $table = 'brands';
 
-    protected $fillable = ['title'];
+    protected $fillable = [
+        'title',
+        'image',
+        ];
 
     public function getSelfBrand() {
         return self::get();

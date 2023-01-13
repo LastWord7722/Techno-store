@@ -17,6 +17,7 @@ class Product extends Model
         'name',
         'category_id',
         'brand_id',
+        'image',
     ];
     use HasFactory;
 }

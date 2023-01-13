@@ -24,7 +24,8 @@ class BrandController extends Controller
     public function store(Request $request, Brand $brand){
 
         $data = $request->validate([
-            'title' => 'required|min:2|max:50'
+            'title' => 'required|min:2|max:50',
+            'image' => 'required|file'
         ]);
 
         $brand->create($data);
