@@ -52,12 +52,13 @@ class BrandController extends Controller
             'title' => 'min:2|max:50',
             'image' => ''
         ]);
+        $oldImage = $brand->image;
+        $newImage = $request->Hasfile('image');
 
-        $NewImage = $request->Hasfile('image');
 
 
-        if($NewImage === true){
-            Storage::disk('public')->delete($data['image']);
+        if($newImage === true){
+            Storage::disk('public')->delete($oldImage);
             $data['image'] = Storage::disk('public')->put('images/brand', $data['image']);
         }
 
