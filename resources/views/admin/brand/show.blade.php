@@ -1,19 +1,37 @@
 @extends('admin.layouts.layouts')
 
 @section('content_admin')
+    <div class="card-body table-responsive mt-lg-5">
+        <table  class="table table-hover text-nowrap ">
+            <thead >
+                <tr>
+                    <th> Уникальный номер</th>
+                    <th> Название бренда</th>
+                    <th> Фото</th>
+                </tr>
+            </thead>
 
-    <div class=" mt-5 ml-5 col-md-12">
-        {{$brand->id .')'. $brand->title}}
+        <tbody>
+            <tr>
+                <td>#{{$brand->id}}</td>
+                <td>{{$brand->title}}</td>
+                <td> <img alt="Иконки бренда нет" src="{{url('storage/' . $brand->image)}}"> </td>
+            </tr>
+        </tbody>
+        </table>
     </div>
 
-    <div class="flex-row  mt-3 m-lg-5">
-        <a class="btn btn-info" href="{{route('admin.brand.edit', $brand->id)}} "> Редактировать </a>
-        <a class="btn btn-info" href="{{ route('admin.brand.index') }} "> Назад</a>
-
-        <form method="post" action="{{route('admin.brand.destroy', $brand->id)}}">
-            @csrf
-            @method('delete')
-            <button type="submit" class="btn btn-danger">Удалить</button>
-        </form>
+    <div class="mt-3 " >
+            <div class="d-flex flex-row">
+                <a class="btn btn-info m-lg-1"  href="{{route('admin.brand.edit', $brand->id)}}"> Редактировать </a>
+                <a class="btn btn-info m-lg-1" href="{{ route('admin.brand.index')}}"> Назад </a>
+                <div class="m-lg-1" >
+                    <form method="post" action="{{route('admin.brand.destroy', $brand->id)}}">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="btn btn-danger">Удалить</button>
+                    </form>
+                </div>
+            </div>
     </div>
 @endsection

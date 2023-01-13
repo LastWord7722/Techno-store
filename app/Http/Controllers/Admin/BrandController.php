@@ -47,17 +47,15 @@ class BrandController extends Controller
     }
 
     public function update(Request $request, Brand $brand){
-
         $data = $request->validate([
             'title' => 'min:2|max:50',
             'image' => ''
         ]);
+
         $oldImage = $brand->image;
         $newImage = $request->Hasfile('image');
 
-
-
-        if($newImage === true){
+        if($newImage === true ){
             Storage::disk('public')->delete($oldImage);
             $data['image'] = Storage::disk('public')->put('images/brand', $data['image']);
         }
