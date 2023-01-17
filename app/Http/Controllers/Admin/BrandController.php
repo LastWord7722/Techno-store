@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 
 class BrandController extends Controller
 {
+
     public function index(){
 
         $brends = Brand::get();
