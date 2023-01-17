@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin\Product;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Product\StoreProductRequest;
+use App\Models\Brand;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -20,8 +22,9 @@ class ProductController extends BaseController
     }
 
     public function create(){
-
-        return view('admin.product.create');
+        $brands = Brand::all();
+        $categories = Category::all();
+        return view('admin.product.create', compact('brands','categories'));
     }
 
     public function store(StoreProductRequest $request, Product $product){
@@ -31,8 +34,8 @@ class ProductController extends BaseController
         $data['image'] = Storage::disk('public')->put('/images/product', $data['image']);
 
         $product->create($data);
-
-        return redirect()->route('admin.product.index' );
+        dd($product);
+        return redirect()->route('admin.product.show',$data->id );
     }
 
     public function show(Product $product){
