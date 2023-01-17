@@ -19,5 +19,5 @@ class Product extends Model
         'brand_id',
         'image',
     ];
-    use HasFactory;
+
 }

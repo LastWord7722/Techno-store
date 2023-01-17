@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\Product\ProductController;
+use App\Http\Controllers\Main\MainController;
 use Illuminate\Support\Facades\Route;
-use  App\Http\Controllers\Main\MainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,7 +50,14 @@ Route::group(['prefix'=> 'admin', 'namespace' => 'admin',],function(){
 
     //PRODUCT
     Route::group(['prefix' => 'product', 'namespace' => 'product'], function (){
+
         Route::get('/', [ProductController::class, 'index'])->name('admin.product.index');
+        Route::get('/create', [ProductController::class, 'create'])->name('admin.product.create');
+        Route::POST('/', [ProductController::class, 'store'])->name('admin.product.store');
+        Route::get('/{product}/show',[ProductController::class,'show'])->name('admin.product.show');
+        Route::get('/{product}/edit',[ProductController::class,'edit'])->name('admin.product.edit');
+        Route::PATCH('/{product}',[ProductController::class,'update'])->name('admin.product.update');
+        Route::delete('/{product}',[ProductController::class,'destroy'])->name('admin.product.destroy');
     });
 
 });

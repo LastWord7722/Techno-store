@@ -1,14 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Product;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Product\StoreProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use function redirect;
+use function view;
 
-class ProductController extends Controller
+class ProductController extends BaseController
 {
     public function index(){
 
@@ -25,12 +27,8 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request, Product $product){
 
         $data = $request->validated();
-        $image = $request->hasFile('image');
 
-
-        if ($image){
-                 $data['image'] = Storage::disk('public')->put('/images/product', $data['image']);
-        }
+        $data['image'] = Storage::disk('public')->put('/images/product', $data['image']);
 
         $product->create($data);
 

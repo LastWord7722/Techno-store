@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('slug')->nullable();
             $table->string('image')->nullable();
             $table->decimal('price','10','2',true)->default(0); // разобраться с этим полем 
+            $table->boolean('publish')->default(false);
             $table->timestamps();
             $table->softDeletes();
             
