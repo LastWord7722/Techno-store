@@ -2,31 +2,31 @@
 
 @section('content_admin')
 
-    <form method="post" action="{{route('admin.product.store')}}" enctype="multipart/form-data">
+    <form method="post" action="{{route('admin.product.update', $product->id)}}" enctype="multipart/form-data" class="d-flex flex-row ">
         @csrf
-        @method('POST')
+        @method('PATCH')
         <div class="col-md-5 mt-0 m-lg-5">
             <div class="card card-primary">
-                <div class="card-header">
-                    <h3 class="card-title">Добавление товара</h3>
+                <div class="card-header ">
+                    <h3 class="card-title">Обновление товара</h3>
                 </div>
                 <div class="card-body">
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Название товара</label>
-                        <input type="text" name="name" class="form-control" placeholder="Введите название бренда">
+                        <input type="text" name="name" value="{{$product->name}}" class="form-control" placeholder="Введите название бренда">
                     </div>
 
                     <div class="form-group">
                         <label for="'exampleFromConrolSelect1">Выберите бренд</label>
-                        <select class="form-control" id="brand_id" name="category_id">
+                        <select class="form-control" id="brand_id" name="brand_id">
                             <!--не забываем дать имя, чтоб передать в функцию store -->
-                            @foreach($brands as $category )
+                            @foreach($brands as $brand )
 
-                                <option value="{{$category->id}}"
-                                        {{ $category->id == old('category_id') ? 'selected' : '' }} >
+                                <option value="{{$brand->id}}"
+                                        {{ $brand->id == old('brand_id') ? 'selected' : '' }} >
                                     <!--выше, происходит условия, для выбора в случае не заполнения полей, с выбором ид, делать в откр теги -->
-                                    {{$category->id}} ) {{$category->title_category}}</option>
+                                    {{$brand->id}} ) {{$brand->title}}</option>
                             @endforeach
                         </select>
 
@@ -39,16 +39,25 @@
                                     <option value="{{$category->id}}"
                                             {{ $category->id == old('category_id') ? 'selected' : '' }} >
                                         <!--выше, происходит условия, для выбора в случае не заполнения полей, с выбором ид, делать в откр теги -->
-                                        {{$category->id}} ) {{$category->title_category}}</option>
+                                        {{$category->id}} ) {{$category->title}}</option>
                                 @endforeach
                             </select>
 
                         </div>
                     </div>
+
                 </div>
+
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Cоздать</button>
+                    <button type="submit" class="btn btn-primary">Обновить</button>
                 </div>
+            </div>
+        </div>
+            <div class="col-3 mt-2 " >
+                <img class="img text-center" style="width: 340px; height: 440px;"
+                     src="{{url('storage/' . $product->image )}}">
+                <input type="file" name="image" class=" btn btn-primary btn-block mt-3">
+            </div>
     </form>
 
 @endsection
