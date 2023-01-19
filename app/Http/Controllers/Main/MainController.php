@@ -12,7 +12,7 @@ class MainController extends Controller
 {
     public function index(){
 
-
-        return view('main.home');
+        $products = Product::with('brand','category')->paginate(8);
+        return view('main.home', compact('products'));
     }
 }
