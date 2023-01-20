@@ -23,6 +23,8 @@ class ProductFactory extends Factory
             'name' => fake()->jobTitle,
             'category_id' => Category::get()->random()->id,
             'brand_id' => Brand::get()->random()->id,
+            'price' => $this->faker->buildingNumber ,
+            'image' => 'images/280x480.png',
         ];
     }
 

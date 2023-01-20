@@ -224,7 +224,7 @@
                         <div class="boxone text-start">
                             <nav>
                                 <ul class="page-dropdown-menu d-flex align-items-center justify-content-start ">
-                                    <a class="dropdown-list ps-0 " href="{{route('main')}}"> <span class="text-white">Home</span> </a>
+                                    <a class="dropdown-list ps-0 " href="{{route('main.index')}}"> <span class="text-white">Home</span> </a>
 
                                     <li class="dropdown-list "> <a href="#0"> <span> Shop </span> </a>
                                         <ul class="dropdown">
@@ -252,7 +252,7 @@
                                                     <div class="row g-0">
                                                         <div class="col-lg-4">
                                                             <div class="megamenu-box one">
-                                                                <a href="{{route('main')}}">Главная </a>
+                                                                <a href="{{route('main.index')}}">Главная </a>
                                                                 <ul class="megamenu-list">
                                                                     <li><a href="index.html">Home Page
                                                                             01</a></li>

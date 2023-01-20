@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 
 // MAIN
-Route::get('/', [MainController::class, 'index'])->name('main');
+Route::get('/', [MainController::class, 'index'])->name('main.index');
+Route::get('/{product}', [MainController::class, 'show'])->name('main.show');
 
 //ADMIN
 Route::group(['prefix'=> 'admin', 'namespace' => 'admin',],function(){
