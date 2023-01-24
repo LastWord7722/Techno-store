@@ -60,18 +60,18 @@
                         <div class="top-info__top-content d-flex align-items-center justify-content-between">
                             <div class="medio-boxx">
                                 <ul>
-                                    <li> <a href="https://www.facebook.com/" target="_blank"><i
+                                    <li> <a href="#" target="_blank"><i
                                                     class="flaticon-facebook-app-symbol"></i></a> </li>
-                                    <li> <a href="https://www.youtube.com/" target="_blank"><i
+                                    <li> <a href="#" target="_blank"><i
                                                     class="flaticon-youtube"></i></a> </li>
-                                    <li> <a href="https://twitter.com/" target="_blank"><i
+                                    <li> <a href="#" target="_blank"><i
                                                     class="flaticon-twitter"></i></a> </li>
-                                    <li> <a href="https://www.instagram.com/" target="_blank"><i
+                                    <li> <a href="#" target="_blank"><i
                                                     class="flaticon-instagram"></i></a> </li>
                                 </ul>
                             </div>
 
-                            <a href="#0" class="international-shopping d-lg-block d-none "> Донатим на ЗСУ </a>
+                            <a class="text-white" href="#0">  Донатим на ЗСУ </a>
                             <div class=" d-flex align-items-center ">
                                 <div class="language currency"> <select>
                                         <option>USD</option>
@@ -95,9 +95,9 @@
                     <div class="row">
                         <div class="menu-info d-flex justify-content-between align-items-center">
                             <div class="menubar"> <span></span> <span></span> <span></span> </div>
-                            <a href="index.html" class="logo"> <img src={{asset("plugins/images/logo/logo-4.png")}} alt=""> </a>
+                            <a href="#" class="logo"> <img src={{asset("plugins/images/logo/logo-4.png")}} alt=""> </a>
                             <div class="cart-holder">
-                                <a href="#0" class="cart cart-icon position-relative">
+                                <a href="#0" #>
                                     <i class="flaticon-shopping-cart"></i>
                                 </a>
                             </div>
@@ -118,101 +118,90 @@
                 </div>
                 <!-- БЛОК С ТЕКСТОМ -->
                 <ul class="page-dropdown-menu">
-                    <li class="dropdown-list"> <a href="#0"> <span> Home </span> <span class="menuarrow"> <i
+                    <li class="dropdown-list"> <a href="#0"> # Home </span> <span class="menuarrow"> <i
                                         class="flaticon-next-1"></i> </span> </a></li>
                 {{--SHOP--}}
-                    <li class="dropdown-list"> <a href="#0"> <span> Shop </span> <span class="menuarrow"> <i
+                    <li class="dropdown-list"> <a href="#0"> # Shop </span> <span class="menuarrow"> <i
                                         class="flaticon-next-1"></i> </span> </a>
                         <ul class="dropdown">
-                            <li class="subhed position-relative"> <a href="#0"> <span>Shop Details Style </span>
+                            <li class="subhed position-relative"> <a href="#0"> #Shop Details Style </span>
                                     <span class="menuarrowtwo"> <i class="flaticon-next-1"></i> </span> </a>
                                 <ul class="subdropdown">
-                                    <li> <a href="shop-details-1.html">Shop Details 01</a> </li>
+                                    <li> <a href="#">Shop Details 01</a> </li>
                                 </ul>
                             </li>
-                            <li> <a href="shop-grid.html"> Shop Grid</a> </li>
-                            <li> <a href="shop-grid-left-sidebar.html">Shop Grid Left Sidebar</a> </li>
-                            <li> <a href="shop-grid-right-sidebar.html">Shop Grid Right Sidebar</a> </li>
-                            <li> <a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a> </li>
-                            <li> <a href="shop-list-left-sidebar.html">Shop LIst Left Sidebar</a> </li>
+                            <li> <a href="#"> Shop Grid</a> </li>
+                            <li> <a href="#">Shop Grid Left Sidebar</a> </li>
+                            <li> <a href="#">Shop Grid Right Sidebar</a> </li>
+                            <li> <a href="#">Shop List Right Sidebar</a> </li>
+                            <li> <a href="#">Shop LIst Left Sidebar</a> </li>
                         </ul>
                     </li>
                     {{--END SHOP--}}
 
                     <!-- БЛОК С Features -->
-                    <li class="dropdown-list"> <a href="#0"> <span>Features </span> <span class="menuarrow"> <i
+                    <li class="dropdown-list"> <a href="#0"> #Features </span> <span class="menuarrow"> <i
                                         class="flaticon-next-1"></i> </span> </a>
                         <ul class="dropdown">
-                            <li class="subhed position-relative"> <a href="#0"> <span>Category</span> <span
+                            <li class="subhed position-relative"> <a href="#0"> #Category</span> <span
                                             class="menuarrowtwo"> <i class="flaticon-next-1"></i> </span> </a>
                                 <ul class="subdropdown">
-                                    <li> <a href="shop-grid.html">Latest Shoes</a> </li>
-                                    <li> <a href="shop-grid.html">New Shoes</a> </li>
-                                    <li> <a href="shop-grid.html">Casual Shoes</a> </li>
-                                    <li> <a href="shop-grid.html">Office Shoes</a> </li>
+                                    <li> <a href="#">Latest Shoes</a> </li>
+                                    <li> <a href="#">New Shoes</a> </li>
+                                    <li> <a href="#">Casual Shoes</a> </li>
+                                    <li> <a href="#">Office Shoes</a> </li>
                                 </ul>
                             </li>
-                            <li class="subhed position-relative"> <a href="#0"> <span>Offers</span> <span
+                            <li class="subhed position-relative"> <a href="#0"> #Offers</span> <span
                                             class="menuarrowtwo"> <i class="flaticon-next-1"></i> </span> </a>
                                 <ul class="subdropdown">
-                                    <li> <a href="shop-grid.html">New Arrivals </a> </li>
-                                    <li> <a href="shop-grid-left-sidebar.html">Shirts</a> </li>
-                                    <li> <a href="shop-grid-right-sidebar.html">Polos</a> </li>
-                                    <li> <a href="shop-grid-left-sidebar.html">Jeans</a> </li>
-                                    <li> <a href="shop-grid-left-sidebar.html">Casual Dress</a> </li>
+                                    <li> <a href="#">New Arrivals </a> </li>
+                                    <li> <a href="#">Shirts</a> </li>
+                                    <li> <a href="#">Polos</a> </li>
+                                    <li> <a href="#">Jeans</a> </li>
+                                    <li> <a href="#">Casual Dress</a> </li>
                                 </ul>
                             </li>
-                            <li class="subhed position-relative"> <a href="#0"> <span>accessories</span> <span
+                            <li class="subhed position-relative"> <a href="#0"> #accessories</span> <span
                                             class="menuarrowtwo"> <i class="flaticon-next-1"></i> </span> </a>
                                 <ul class="subdropdown">
-                                    <li> <a href="shop-grid-left-sidebar.html">Latest Items </a> </li>
-                                    <li> <a href="shop-grid-left-sidebar.html">Quick Deal</a> </li>
-                                    <li> <a href="shop-grid-left-sidebar.html">Shoes Items</a> </li>
-                                    <li> <a href="shop-grid-left-sidebar.html">Hot Deal</a> </li>
-                                    <li> <a href="shop-grid-left-sidebar.html">Fast Services </a> </li>
+                                    <li> <a href="#">Latest Items </a> </li>
+                                    <li> <a href="#">Quick Deal</a> </li>
+                                    <li> <a href="#">Shoes Items</a> </li>
+                                    <li> <a href="#">Hot Deal</a> </li>
+                                    <li> <a href="#">Fast Services </a> </li>
                                 </ul>
                             </li>
-                            <li class="subhed position-relative"> <a href="#0"> <span>Discount</span> <span
+                            <li class="subhed position-relative"> <a href="#0"> #Discount</span> <span
                                             class="menuarrowtwo"> <i class="flaticon-next-1"></i> </span> </a>
                                 <ul class="subdropdown">
-                                    <li> <a href="shop-grid-left-sidebar.html">10% Off</a> </li>
-                                    <li> <a href="shop-grid-left-sidebar.html">20% Off</a> </li>
-                                    <li> <a href="shop-grid-left-sidebar.html">30% Off</a> </li>
-                                    <li> <a href="shop-grid-left-sidebar.html">40% Off</a> </li>
-                                    <li> <a href="shop-list-left-sidebar.html">50% Off</a> </li>
+                                    <li> <a href="#">10% Off</a> </li>
+                                    <li> <a href="#">20% Off</a> </li>
+                                    <li> <a href="#">30% Off</a> </li>
+                                    <li> <a href="#">40% Off</a> </li>
+                                    <li> <a href="#">50% Off</a> </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown-list"> <a href="#0"> <span>Pages</span> <span class="menuarrow" > <i
+                    <li class="dropdown-list"> <a href="#0"> #Pages</span> <span class="menuarrow" > <i
                                         class="flaticon-next-1"></i> </span> </a>
                         <ul class=" dropdown ">
-                            <li><a href="about-us.html"> About Us </a></li>
-                            <li><a href="cart.html"> Cart </a></li>
-                            <li><a href="compare.html"> Compare </a></li>
-                            <li><a href="wishlist.html"> Wishlist </a></li>
-                            <li><a href="order-track.html"> Order Track </a></li>
-                            <li><a href="my-account.html"> My Account </a></li>
-                            <li><a href="faq.html"> FAQ </a></li>
-                            <li><a href="error.html"> 404 </a></li>
-                            <li><a href="shop-grid.html">Shop Grid </a></li>
-                            <li><a href="shop-grid-left-sidebar.html"> Shop Grid Left Sidebar </a></li>
-                            <li><a href="shop-grid-right-sidebar.html"> Shop Grid Right Sidebar </a></li>
-                            <li><a href="shop-list-left-sidebar.html"> Shop List Left Sidebar </a></li>
-                            <li><a href="shop-grid-right-sidebar.html"> Shop List Right Sidebar </a></li>
+                            <li><a href="#"> About Us </a></li>
+                            <li><a href="#"> Cart </a></li>
                         </ul>
                     </li>
 
-                    <li class="dropdown-list"> <a href="#0"> <span>Blogs </span> <span class="menuarrow"> <i
+                    <li class="dropdown-list"> <a href="#0"> <span> Blogs </span> <span class="menuarrow"> <i
                                         class="flaticon-next-1"></i> </span> </a>
                         <ul class=" dropdown ">
-                            <li><a href="blog.html">Blog Single </a></li>
-                            <li><a href="blog-single.html">Blog Details </a></li>
+                            <li><a href="#">Blog Single </a></li>
+                            <li><a href="#">Blog Details </a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact </a></li>
-                    <li><a href="login.html">Login </a></li>
-                    <li><a href="register.html">Register </a></li>
+                    <li><a href="#">Contact </a></li>
+                    <li><a href="#">Login </a></li>
+                    <li><a href="#">Register </a></li>
                 </ul>
             </div>
         </div>
@@ -470,11 +459,7 @@
                         </div>
                         <ul class="footer-links">
                             <li><a href="#0"> Who we are</a></li>
-                            <li><a href="#0">Work with us</a></li>
-                            <li><a href="#0">Become a supplier</a></li>
-                            <li><a href="#0">Investor relations</a></li>
-                            <li><a href="#0">Our devicesccount</a></li>
-                            <li><a href="#0">Affiliate program</a></li>
+
                         </ul>
                     </div>
                 </div>
