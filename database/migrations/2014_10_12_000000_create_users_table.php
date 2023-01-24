@@ -19,9 +19,13 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->unsignedBigInteger('role_id');
+            $table->unsignedBigInteger('role_id')->default(1);
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
+
+            $table->index('role_id','role_id_idx',);
+            $table->foreign('role_id','role_id_fk')->on('roles')->references('id');
         });
     }
 

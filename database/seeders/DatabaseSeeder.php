@@ -6,7 +6,10 @@ namespace Database\Seeders;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,10 +24,17 @@ class DatabaseSeeder extends Seeder
         Brand::factory(3)->create();
         Category::factory(5)->create();
         Product::factory(10)->create();
+        Role::factory(1)->create();
+        Role::factory()->create([
+            'title' => 'admin',
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        ]);
+
+         User::factory()->create([
+             'name' => 'Mark',
+             'email' => 'lastwordmark@gmail.com',
+             'password' => Hash::make('1111'),
+             'role_id' => 2,
+         ]);
     }
 }

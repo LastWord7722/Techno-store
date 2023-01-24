@@ -16,7 +16,6 @@
         </div>
 
     </div>
-
 @section('Content')
     <div>
         <h3 class="text-center"> Топ продажи
