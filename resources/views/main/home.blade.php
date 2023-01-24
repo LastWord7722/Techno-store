@@ -23,7 +23,7 @@
         Будет потом
         </h3>
     </div>
-    
+
     {{--Начало карточек товара --}}
     <section class="products-grid pt-60 pb-60 mt-5">
         <div class="section-header text-center wow fadeInUp  animated" style="visibility: visible; animation-name: fadeInUp;">
