@@ -400,13 +400,22 @@
                                             </div>
                                         </form>
                                     </li>
-                                    <li class="d-lg-block d-none">
-                                        <a href="{{ route('login') }}" class="number"> <i class="flaticon-user-4"></i> </a>
-                                    </li>
-                                    <li> <a href="#0" class="number cart-icon"> <i class="flaticon-shop-bag"></i>
-                                            <span class="count count4">2</span>
-                                        </a> </li>
-                                </ul>
+                                    @guest()
+                                        <li class="d-lg-block d-none">
+                                            <a href="{{ route('login') }}" class="number"> <i class="flaticon-user-4"></i> </a>
+                                        </li>
+                                    @endguest
+
+                                    @if($user[0]->role->title == 'admin')
+                                        <li class="d-lg-block d-none">
+                                            <a href="{{ route('admin.index') }}" class="number"> <i class="flaticon-user-4"></i> </a>
+                                        </li>
+                                    @endif
+                                        <li> <a href="#0" class="number cart-icon"> <i class="flaticon-shop-bag"></i>
+                                                <span class="count count4">2</span>
+                                            </a> </li>
+                                    </ul>
+
                             </div>
                         </div>
                         {{--ПРАВАЯ ЧАСТЬ--}}

@@ -1,5 +1,5 @@
 @extends('admin.layouts.layouts')
 
 @section('content_admin')
-    главная
+    Супер главная
 @endsection

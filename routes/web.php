@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminMainController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\Product\ProductController;
@@ -26,6 +27,7 @@ Route::get('/{product}', [MainController::class, 'show'])->name('main.show');
 //ADMIN
 Route::group(['prefix'=> 'admin', 'namespace' => 'admin', 'middleware' => 'admin'],function(){
 
+    Route::get('/main', [AdminMainController::class, 'index'])->name('admin.index');
     //Brand
     Route::group(['prefix' => 'brand', 'namespace'=>'brand'], function (){
 

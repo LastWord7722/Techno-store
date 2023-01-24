@@ -22,17 +22,21 @@
 
         <!-- Sidebar Menu -->
        <nav class="mt-2 ml-2 text-white">
-          <p> <a href="{{route('admin.product.index')}}">
-               Product
+          <p> <a href="{{route('admin.index')}}">
+               Главная
+           </a></p>
+
+           <p> <a href="{{route('admin.product.index')}}">
+               Весь товар
            </a></p>
 
           <p> <a href="{{route('admin.category.index')}}">
-               Category
+               Категории
            </a></p>
 
            <p>
            <a href="{{route('admin.brand.index')}}">
-               Brand
+               Бренд
            </a>
            </p>
        </nav>
