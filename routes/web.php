@@ -24,7 +24,7 @@ Route::get('/', [MainController::class, 'index'])->name('main.index');
 Route::get('/{product}', [MainController::class, 'show'])->name('main.show');
 
 //ADMIN
-Route::group(['prefix'=> 'admin', 'namespace' => 'admin',],function(){
+Route::group(['prefix'=> 'admin', 'namespace' => 'admin', 'middleware' => 'admin'],function(){
 
     //Brand
     Route::group(['prefix' => 'brand', 'namespace'=>'brand'], function (){
