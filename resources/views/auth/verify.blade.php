@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.layouts')
 
-@section('content')
+@section('Content')
+    <section class="products-grid pt-60 pb-60 mt-5">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -25,4 +26,5 @@
         </div>
     </div>
 </div>
+    </section>
 @endsection

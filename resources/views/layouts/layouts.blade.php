@@ -401,7 +401,7 @@
                                         </form>
                                     </li>
                                     <li class="d-lg-block d-none">
-                                        <a href="wishlist.html" class="number"> <i class="flaticon-user-4"></i> </a>
+                                        <a href="{{ route('login') }}" class="number"> <i class="flaticon-user-4"></i> </a>
                                     </li>
                                     <li> <a href="#0" class="number cart-icon"> <i class="flaticon-shop-bag"></i>
                                             <span class="count count4">2</span>

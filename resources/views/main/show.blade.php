@@ -1,4 +1,4 @@
-@extends('main.layouts')
+@extends('layouts.layouts')
 @section('Content')
     <section class="products-grid pt-60 pb-60 mt-5 row">
         <div class=" col-4">

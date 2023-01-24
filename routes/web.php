@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\Product\ProductController;
 use App\Http\Controllers\Main\MainController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Auth::routes();
 // MAIN
 Route::get('/', [MainController::class, 'index'])->name('main.index');
 Route::get('/{product}', [MainController::class, 'show'])->name('main.show');
@@ -62,6 +63,10 @@ Route::group(['prefix'=> 'admin', 'namespace' => 'admin',],function(){
     });
 
 });
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+
+Route::get('/home/1', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

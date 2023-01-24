@@ -1,5 +1,5 @@
 
-@extends('main.layouts')
+@extends('layouts.layouts')
 <!-- Background image -->
     <div class=" text-center bg-image " style="
           background-image: url(https://img.freepik.com/psd-gratuit/modele-maquette-ecran-pour-telephone-mobile-premium_53876-65745.jpg?w=2000);

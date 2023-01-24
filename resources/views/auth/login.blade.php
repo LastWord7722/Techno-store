@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.layouts')
 
-@section('content')
+@section('Content')
+    <section class="products-grid pt-60 pb-60 mt-5">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -44,7 +45,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                    <label class="form-check-label" for="remember">
+                                    <label class="form-check-label text-dark m-lg-1" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>
@@ -53,13 +54,16 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                <button type="submit" class="btn btn-dark">
+                                    {{ __('Войти') }}
                                 </button>
+                                <a href="{{route('register')}}" class="btn btn-dark">
+                                    {{ __('Регистрация') }}
+                                </a>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                    <a class="btn btn-link text-dark" href="{{ route('password.request') }}">
+                                        {{ __('Востановить пароль') }}
                                     </a>
                                 @endif
                             </div>
@@ -70,4 +74,5 @@
         </div>
     </div>
 </div>
+    </section>
 @endsection
