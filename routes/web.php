@@ -31,7 +31,7 @@ Route::get('/{product}', [MainController::class, 'show'])->name('main.show');
 //brand
 Route::group(['prefix'=> 'brand/f', 'namespace' => 'main'],function() {
     Route::get('/', [FilterBrandController::class, 'index'])->name('main.index.brand');
-    Route::get('/{brand}', [FilterBrandController::class, 'getProductBrand'])->name('main.filter.brand');
+    Route::get('/{brands}', [FilterBrandController::class, 'getProductBrand'])->name('main.filter.brand');
 });
 
 //category

@@ -17,11 +17,9 @@ class FilterBrandController extends Controller
         return view('main.brand.index',compact('brands'));
     }
 
-    public function getProductBrand(Brand $brand){
-        $product = Product::with('brand')->brand->get();
-        dd($product);
-        $getProduct = Product::where($product->brand->id,'=', $brand->id)->paginate(10);
-        return view('main.brand.show',compact('brand'));
+    public function getProductBrand(Brand $brands){
+
+        return view('main.brand.show',compact('brands'));
     }
 
 }

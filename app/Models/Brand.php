@@ -27,8 +27,8 @@ class Brand extends Model
         return $this->hasMany(Product::class);
     }
 
-    public function getProduct(){
-        return $this->product()->where()
+    public function get_product(){
+        return $this->product();
     }
 
 
