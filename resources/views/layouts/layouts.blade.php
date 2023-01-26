@@ -119,10 +119,10 @@
                 </div>
                 <!-- БЛОК С ТЕКСТОМ -->
                 <ul class="page-dropdown-menu">
-                    <li class="dropdown-list"> <a href="#0"> # Home </span> <span class="menuarrow"> <i
+                    <li class="dropdown-list"> <a href="#0"> # Главная1 </span> <span class="menuarrow"> <i
                                         class="flaticon-next-1"></i> </span> </a></li>
                 {{--SHOP--}}
-                    <li class="dropdown-list"> <a href="#0"> # Shop </span> <span class="menuarrow"> <i
+                    <li class="dropdown-list"> <a href="#0"> # Бренды </span> <span class="menuarrow"> <i
                                         class="flaticon-next-1"></i> </span> </a>
                         <ul class="dropdown">
                             <li class="subhed position-relative"> <a href="#0"> #Shop Details Style </span>
@@ -214,9 +214,9 @@
                         <div class="boxone text-start">
                             <nav>
                                 <ul class="page-dropdown-menu d-flex align-items-center justify-content-start ">
-                                    <a class="dropdown-list ps-0 " href="{{route('main.index')}}"> <span class="text-white">Home</span> </a>
+                                    <a class="dropdown-list ps-0 " href="{{route('main.index')}}"> <span class="text-white">Главная</span> </a>
 
-                                    <li class="dropdown-list "> <a href="#0"> <span> Shop </span> </a>
+                                    <li class="dropdown-list "> <a href="{{route('main.index.brand')}}"> <span> Бренды </span> </a>
                                         <ul class="dropdown">
                                             <li><a href="shop-grid.html">Shop Grid</a></li>
                                             </li>
@@ -232,6 +232,10 @@
                                             </li>
                                         </ul>
                                     </li>
+                                        <ul class="page-dropdown-menu d-flex align-items-center justify-content-start ">
+                                            <a class="dropdown-list ps-0 " href="{{route('main.index.category')}}"> <span class="text-white">Категории</span> </a>
+                                        </ul>
+
 
                                     {{-- начало features--}}
 

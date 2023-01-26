@@ -29,15 +29,15 @@ Route::get('/{product}', [MainController::class, 'show'])->name('main.show');
 
 //filter
 //brand
-Route::group(['prefix'=> 'brand/f', 'namespace' => 'main'],function() {
+Route::group(['prefix'=> 'brand/b', 'namespace' => 'main'],function() {
     Route::get('/', [FilterBrandController::class, 'index'])->name('main.index.brand');
-    Route::get('/{brands}', [FilterBrandController::class, 'getProductBrand'])->name('main.filter.brand');
+    Route::get('/{brands}', [FilterBrandController::class, 'getProductBrand'])->name('main.show.brand');
 });
 
 //category
-Route::group(['prefix'=> 'category', 'namespace' => 'main'],function() {
-    Route::get('/', [FilterCategoryController::class, 'index'])->name('main.filter.category');
-    Route::get('/{category}', [FilterCategoryController::class, 'getProductCategory'])->name('main.index.category');
+Route::group(['prefix'=> 'category/c', 'namespace' => 'main'],function() {
+    Route::get('/', [FilterCategoryController::class, 'index'])->name('main.index.category');
+    Route::get('/{categories}', [FilterCategoryController::class, 'getProductCategory'])->name('main.show.category');
 });
 
 

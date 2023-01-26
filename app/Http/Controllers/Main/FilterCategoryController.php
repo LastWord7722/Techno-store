@@ -13,13 +13,14 @@ use Illuminate\Support\Facades\Auth;
 class FilterCategoryController extends Controller
 {
     public function index(){
+        $categories = Category::all();
 
+        return view('main.category.index',compact('categories'));
     }
 
-    public function getProductCategory(){
+    public function getProductCategory(Category $categories){
 
-        $products = Product::with('brand','category')->paginate(10);
-        return view('main.home', compact('products'));
+        return view('main.category.show',compact('categories'));
     }
 
 }
