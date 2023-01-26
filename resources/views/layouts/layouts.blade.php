@@ -20,6 +20,7 @@
     <link
             href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Rubik:wght@300;400;500;600;700;800&display=swap"
             rel="stylesheet">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/5db38fd61b.css" crossorigin="anonymous">
 
     <!-- FlatIcon Css -->
     <link rel="stylesheet" href={{asset("plugins/fonts/flaticon.css")}}>
@@ -394,14 +395,20 @@
                                             <a href="{{ route('login') }}" class="number"> <i class="flaticon-user-4"></i> </a>
                                         </li>
                                     @endguest
-
-                                    @if($user[0]->role->title == 'admin')
+                                    @auth()
+                                        @if(auth()->user()->role->title == 'admin')
                                         <li class="d-lg-block d-none">
-                                            <a href="{{ route('admin.index') }}" class="number"> <i class="flaticon-user-4"></i> </a>
+                                            <a href="{{ route('admin.index') }}" class="number"> <i class="fa-solid fa-a"></i> </a>
                                         </li>
-                                    @endif
+                                        @endif
+
+                                        <li class="d-lg-block d-none">
+                                            <a href="{{ route('personal.index', auth()->user()->id) }}" class="number"> <i class="flaticon-user-4"></i> </a>
+                                        </li>
+
+                                    @endauth
                                         <li> <a href="#0" class="number cart-icon"> <i class="flaticon-shop-bag"></i>
-                                                <span class="count count4">2</span>
+                                                <span class="count count4"></span>
                                             </a> </li>
                                     </ul>
 
@@ -529,7 +536,7 @@
 </footer>
 
 <!--==== Js Scripts Start ====-->
-
+<script src="https://kit.fontawesome.com/5db38fd61b.js" crossorigin="anonymous"></script>
 <!-- Jquery v3.6.0 Js -->
 <script src={{asset("plugins/js/jqurey.v3.6.0.min.js")}}></script> <!-- Popper v2.9.3 Js -->
 <script src={{asset("plugins/js/popper.v2.9.3.min.js")}}></script> <!-- Bootstrap v5.1.1 js -->

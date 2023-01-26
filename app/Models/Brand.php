@@ -23,7 +23,13 @@ class Brand extends Model
         return self::get();
     }
 
+    public function product(){
+        return $this->hasMany(Product::class);
+    }
 
+    public function getProduct(){
+        return $this->product()->where()
+    }
 
 
 

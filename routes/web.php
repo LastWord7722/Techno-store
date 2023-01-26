@@ -4,7 +4,10 @@ use App\Http\Controllers\Admin\AdminMainController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\Product\ProductController;
+use App\Http\Controllers\Main\FilterBrandController;
+use App\Http\Controllers\Main\FilterCategoryController;
 use App\Http\Controllers\Main\MainController;
+use App\Http\Controllers\Main\PersonalController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +27,25 @@ Auth::routes();
 Route::get('/', [MainController::class, 'index'])->name('main.index');
 Route::get('/{product}', [MainController::class, 'show'])->name('main.show');
 
+//filter
+//brand
+Route::group(['prefix'=> 'brand/f', 'namespace' => 'main'],function() {
+    Route::get('/', [FilterBrandController::class, 'index'])->name('main.index.brand');
+    Route::get('/{brand}', [FilterBrandController::class, 'getProductBrand'])->name('main.filter.brand');
+});
+
+//category
+Route::group(['prefix'=> 'category', 'namespace' => 'main'],function() {
+    Route::get('/', [FilterCategoryController::class, 'index'])->name('main.filter.category');
+    Route::get('/{category}', [FilterCategoryController::class, 'getProductCategory'])->name('main.index.category');
+});
+
+
+//Personal
+Route::group(['prefix' => 'personal/{user}', 'middleware' => 'auth'], function(){
+    Route::get('/',[PersonalController::class, 'index'])->name('personal.index');
+});
+
 //ADMIN
 Route::group(['prefix'=> 'admin', 'namespace' => 'admin', 'middleware' => 'admin'],function(){
 
@@ -38,6 +60,9 @@ Route::group(['prefix'=> 'admin', 'namespace' => 'admin', 'middleware' => 'admin
         Route::get('/{brand}/edit',[BrandController::class,'edit'])->name('admin.brand.edit');
         Route::PATCH('/{brand}',[BrandController::class,'update'])->name('admin.brand.update');
         Route::delete('/{brand}',[BrandController::class,'destroy'])->name('admin.brand.destroy');
+
+
+
     });
 
     //CATEGORY
@@ -50,6 +75,7 @@ Route::group(['prefix'=> 'admin', 'namespace' => 'admin', 'middleware' => 'admin
         Route::get('/{category}/edit',[CategoryController::class,'edit'])->name('admin.category.edit');
         Route::PATCH('/{category}',[CategoryController::class,'update'])->name('admin.category.update');
         Route::delete('/{category}',[CategoryController::class,'destroy'])->name('admin.category.destroy');
+
     });
 
     //PRODUCT

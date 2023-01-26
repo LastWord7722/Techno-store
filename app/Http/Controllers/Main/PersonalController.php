@@ -10,12 +10,11 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class MainController extends Controller
+class PersonalController extends Controller
 {
-    public function index(){
+    public function index(User $user){
 
-        $products = Product::with('brand','category')->paginate(10);
-        return view('main.home', compact('products'));
+        return view('main.personal.index', compact('user'));
     }
 
     public function show(Product $product){

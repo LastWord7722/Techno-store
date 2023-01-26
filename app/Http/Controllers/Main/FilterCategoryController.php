@@ -10,16 +10,16 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class MainController extends Controller
+class FilterCategoryController extends Controller
 {
     public function index(){
+
+    }
+
+    public function getProductCategory(){
 
         $products = Product::with('brand','category')->paginate(10);
         return view('main.home', compact('products'));
     }
 
-    public function show(Product $product){
-
-        return view('main.show', compact('product'));
-    }
 }
