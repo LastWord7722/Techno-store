@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class FilterBrandController extends Controller
 {
     public function index(){
-        $brands = Brand::all();
+        $brands = Brand::withCount('product')->get();
         return view('main.brand.index',compact('brands'));
     }
 

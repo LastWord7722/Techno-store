@@ -18,7 +18,8 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            'title' => fake()->title(),
+            'title' => fake()->streetName,
+            'image' => 'images/category/350x240.png',
         ];
     }
 

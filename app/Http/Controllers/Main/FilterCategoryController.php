@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class FilterCategoryController extends Controller
 {
     public function index(){
-        $categories = Category::all();
+        $categories = Category::withCount('product')->get();
 
         return view('main.category.index',compact('categories'));
     }

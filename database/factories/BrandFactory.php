@@ -18,7 +18,8 @@ class BrandFactory extends Factory
     public function definition()
     {
         return [
-            'title' => fake()->title,
+            'title' => fake()->firstName,
+            'image' => 'images/brand/350x240.png',
         ];
     }
 

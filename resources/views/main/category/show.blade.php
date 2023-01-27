@@ -9,10 +9,7 @@
             </h3>
         </div>
 
-        <div class="section-header text-center wow fadeInUp  animated" style="visibility: visible; animation-name: fadeInUp;">
-            <h2 class="wow  fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;"> Фешин телефоны </h2>
-            <p class="wow  fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">Фешин устройства и прочее, прочее</p>
-        </div>
+       
         <div class="row mt-4 text-center m-lg-4">
             @foreach($categories->get_product as $product)
                 <div class="card mt-4 m-lg-1 border" style="width: 18rem;">

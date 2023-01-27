@@ -33,4 +33,5 @@ class Brand extends Model
 
 
 
+
 }
