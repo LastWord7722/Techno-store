@@ -41,12 +41,12 @@
                         <li class="list-group-item">Категория :{{$product->category->title}}</li>
                         <li class="list-group-item">{{$product->price}} $</li>
                     </ul>
-                    <div class="card-body">
-                        <a href="{{route('main.show',$product->id)}}" class="btn btn-primary">Подробнее</a>
+                    <div class="card-body  d-flex flex-row">
+                        <a href="{{route('main.show',$product->id)}}"> <p class="btn btn-outline-dark" style="margin-right: 7px;"> Просмотреть </p></a>
 
                         <form action="{{route('addCard',$product->id)}}" method="post">
                             @csrf @method('POST')
-                            <button type="submit" class="btn btn-primary">В корзину</button>
+                            <button type="submit" class="btn btn-outline-dark "> <i class="fa-solid fa-basket-shopping"> </i></button>
                         </form>
                     </div>
                 </div>

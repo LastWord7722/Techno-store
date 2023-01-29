@@ -60,11 +60,9 @@ class BasketController extends Controller
         $order = Oreder::find($orderId);
 
         $minusCount = $order->products()->where('product_id','=',$productId)->first()->pivot;
-        if ($order->products->contains($productId) and $minusCount->quantity > 2){
+        if ($order->products->contains($productId) and $minusCount->quantity >= 2){
             $minusCount->quantity--;
             $minusCount->update();
-        }else{
-            $order->products()->detach($productId);
         }
         return redirect()->back();
 

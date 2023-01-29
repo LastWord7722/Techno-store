@@ -19,6 +19,9 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @if(!$order->products)
+                                  <h3 class="text-center text-dark">  Добавленых товаров нет </h3>
+                                @endif
                                 @foreach($order->products as $product)
                                     <tr>
                                         <td>
@@ -47,7 +50,7 @@
                                                 </form>
                                             </div>
                                         </td>
-                                        <td class="sub-total">{{$product->price}} $</td>
+                                        <td class="sub-total">{{$product->price * $product->pivot->quantity}} $</td>
 
                                         <td>
                                             <form action=" {{route('removeCard',$product->id)}}" method="post">
