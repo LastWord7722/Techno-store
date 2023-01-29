@@ -22,4 +22,7 @@ class MainController extends Controller
 
         return view('main.show', compact('product'));
     }
+
+
+
 }

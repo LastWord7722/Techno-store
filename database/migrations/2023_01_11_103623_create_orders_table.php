@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('baskets', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
-
+            $table->tinyInteger('status')->default(0);
+            $table->string('name')->nullable();
+            $table->string('phone')->nullable();
             $table->timestamps();
         });
     }

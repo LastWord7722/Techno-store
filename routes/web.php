@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminMainController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\Product\ProductController;
+use App\Http\Controllers\Main\BasketController;
 use App\Http\Controllers\Main\FilterBrandController;
 use App\Http\Controllers\Main\FilterCategoryController;
 use App\Http\Controllers\Main\MainController;
@@ -26,6 +27,14 @@ Auth::routes();
 // MAIN
 Route::get('/', [MainController::class, 'index'])->name('main.index');
 Route::get('/{product}', [MainController::class, 'show'])->name('main.show');
+
+//basket
+Route::group(['prefix' => 'basket'],function(){
+Route::get('/place',[BasketController::class, 'basket'])->name('basket.index');
+Route::post('/add/{id}',[BasketController::class,'addCard'])->name('addCard');
+Route::post('/remove/{id}',[BasketController::class,'removeCard'])->name('removeCard');
+Route::post('/minus/{id}',[BasketController::class,'minusProduct'])->name('minusProduct');
+});
 
 //filter
 //brand

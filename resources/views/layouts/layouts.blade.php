@@ -411,7 +411,7 @@
                                         </li>
 
                                     @endauth
-                                        <li> <a href="#0" class="number cart-icon"> <i class="flaticon-shop-bag"></i>
+                                        <li> <a href="{{route('basket.index')}}" class="number cart-icon"> <i class="flaticon-shop-bag"></i>
                                                 <span class="count count4"></span>
                                             </a> </li>
                                     </ul>

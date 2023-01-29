@@ -43,7 +43,11 @@
                     </ul>
                     <div class="card-body">
                         <a href="{{route('main.show',$product->id)}}" class="btn btn-primary">Подробнее</a>
-                        <a href="#" class="btn btn-primary">В корзину</a>
+
+                        <form action="{{route('addCard',$product->id)}}" method="post">
+                            @csrf @method('POST')
+                            <button type="submit" class="btn btn-primary">В корзину</button>
+                        </form>
                     </div>
                 </div>
             @endforeach
