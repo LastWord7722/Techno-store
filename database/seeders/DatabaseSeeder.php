@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Product;
 use App\Models\Role;
 use App\Models\User;
@@ -25,16 +26,14 @@ class DatabaseSeeder extends Seeder
         Category::factory(18)->create();
         Product::factory(100)->create();
         Role::factory(1)->create();
-        Role::factory()->create([
-            'title' => 'admin',
-
-        ]);
-
+        Role::factory()->create(['title' => 'admin']);
+        User::factory(15)->create();
          User::factory()->create([
              'name' => 'Mark',
              'email' => 'lastwordmark@gmail.com',
              'password' => Hash::make('1111'),
              'role_id' => 2,
          ]);
+         Comment::factory(50)->create();
     }
 }
