@@ -20,6 +20,7 @@ class MainController extends Controller
 
     public function show(Product $product){
 
+
         return view('main.show', compact('product'));
     }
 

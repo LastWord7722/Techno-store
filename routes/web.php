@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\Product\ProductController;
 use App\Http\Controllers\Main\BasketController;
+use App\Http\Controllers\Main\CommentController;
 use App\Http\Controllers\Main\FilterBrandController;
 use App\Http\Controllers\Main\FilterCategoryController;
 use App\Http\Controllers\Main\MainController;
@@ -27,6 +28,8 @@ Auth::routes();
 // MAIN
 Route::get('/', [MainController::class, 'index'])->name('main.index');
 Route::get('/{product}', [MainController::class, 'show'])->name('main.show');
+
+Route::post('/new/{id}/store',[CommentController::class, 'store'])->name('comment.main.store');
 
 //basket
 Route::group(['prefix' => 'basket'],function(){
