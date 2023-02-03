@@ -26,6 +26,7 @@
         <a href="{{route('main.index')}}" class="btn-primary mt-5 btn btn-primary">Назад</a>
         </div>
         {{--секция комментов--}}
+
         @auth()
             <section class="comment-section">
                 <h2 class="section-title mb-5" data-aos="fade-up">Leave a Comment</h2>
@@ -40,7 +41,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12" data-aos="fade-up">
-                            <input type="submit" value="Send Message" class="btn btn-warning">
+                            <input type="submit" value="Send Message" class="btn btn-warning mb-2">
                         </div>
                     </div>
                 </form>
@@ -58,7 +59,8 @@
         </div>
 
         @foreach($product->comment_user as  $comment)
-            <div class="card card-primary card-outline border border-dark mt-2">
+
+            <div class="card card-primary card-outline border border-dark mt-2 col-8 ">
                 <div class="card-header">
                     <h6 class="card-title m-0 text-dark "> {{$comment->name}}</h6>
                     <p class="blog-post-category"> {{$comment -> DataAsCarbon->diffForHumans()}} </p>
@@ -69,7 +71,7 @@
                                     <form action="{{route('comment.main.destroy',$comment->id)}}" method="post">
                                         @csrf
                                         @method('Delete')
-                                        <button type="submit" class="text-white btn btn-danger"> Delete</button>
+                                        <button type="submit" class="text-white btn btn-danger"> Удалить</button>
                                     </form>
                                 </div>
                             @endif
@@ -82,4 +84,5 @@
             </div>
         @endforeach
     </section>
+
 @endsection

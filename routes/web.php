@@ -29,7 +29,9 @@ Auth::routes();
 Route::get('/', [MainController::class, 'index'])->name('main.index');
 Route::get('/{product}', [MainController::class, 'show'])->name('main.show');
 
-Route::post('/new/{id}/store',[CommentController::class, 'store'])->name('comment.main.store');
+//comment
+Route::post('/{product}/store',[CommentController::class, 'store'])->name('comment.main.store');
+Route::delete('/{comment}/destroy',[CommentController::class, 'destroy'])->name('comment.main.destroy');
 
 //basket
 Route::group(['prefix' => 'basket'],function(){
