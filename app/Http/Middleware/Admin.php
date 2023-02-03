@@ -18,7 +18,7 @@ class Admin
     public function handle(Request $request, Closure $next)
     {
         $user = Auth::user();
-        if(isset($user) || $user === 'admin' ){
+        if(isset($user) && $user === 'admin' ){
             return $next($request);
         }else{
             return back();
