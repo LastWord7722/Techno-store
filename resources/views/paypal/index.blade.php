@@ -12,11 +12,7 @@
 <body>
 @section('Content')
 
-    @if(\Session::has('error'))
-        <div class="alert alert-danger">{{ \Session::get('error') }}</div>
-        {{ \Session::forget('error') }}
 
-    @endif
     <div>
         <h2 style="margin-top: 10%">
             C вами приятно иметь дело
@@ -34,6 +30,14 @@
         <div class="alert alert-success">{{ \Session::get('success') }}</div>
         {{ \Session::forget('success') }}
     @endif
+
+    @if(\Session::has('error'))
+        <div class="alert alert-danger">{{ \Session::get('error') }}</div>
+        {{ \Session::forget('error') }}
+
+    @endif
 @endsection
+
+
 
 </body>

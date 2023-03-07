@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-use Illuminate\Routing\Route;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 
@@ -17,10 +16,8 @@ class PayPalController extends Controller
         return view('paypal.index');
     }
 
-
     public function processPaypal(Request $request, Product $product)
     {
-
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
         $provider->getAccessToken();
@@ -50,7 +47,7 @@ class PayPalController extends Controller
             }
 
             return redirect()
-                ->route('createOrder',compact('product'))
+                ->route('createOrder')
                 ->with('error', 'Something went wrong.');
 
         } else {
@@ -63,13 +60,13 @@ class PayPalController extends Controller
 
     public function processSuccess(Request $request)
     {
-
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
         $provider->getAccessToken();
         $response = $provider->capturePaymentOrder($request['token']);
 
         if (isset($response['status']) && $response['status'] == 'COMPLETED') { // при условии что заказ существует и статус успешный
+            dd($response);
             return redirect()
                 ->route('createOrder')
                 ->with('success', 'Transaction complete.');
