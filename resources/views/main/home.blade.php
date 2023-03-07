@@ -43,6 +43,7 @@
                     </ul>
                     <div class="card-body  d-flex flex-row">
                         <a href="{{route('main.show',$product->id)}}"> <p class="btn btn-outline-dark" style="margin-right: 7px;"> Просмотреть </p></a>
+                        <a href="{{route('processPaypal',$product->id)}}"> <p class="btn btn-outline-dark" style="margin-right: 5px;"> Купить </p></a>
 
                         <form action="{{route('addCard',$product->id)}}" method="post">
                             @csrf @method('POST')

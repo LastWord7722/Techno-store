@@ -10,6 +10,7 @@ use App\Http\Controllers\Main\FilterBrandController;
 use App\Http\Controllers\Main\FilterCategoryController;
 use App\Http\Controllers\Main\MainController;
 use App\Http\Controllers\Main\PersonalController;
+use App\Http\Controllers\PayPal\PayPalController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
+//PAYPAL
+route::get('/createOrder/',[PayPalController::class,'createOrder'])->name('createOrder');
+route::get('/processPaypal/{product}',[PayPalController::class,'processPaypal'])->name('processPaypal');
+route::get('/processSuccess',[PayPalController::class,'processSuccess'])->name('processSuccess');
+route::get('/processCancel',[PayPalController::class,'processCancel'])->name('processCancel');
+
 // MAIN
 Route::get('/', [MainController::class, 'index'])->name('main.index');
 Route::get('/{product}', [MainController::class, 'show'])->name('main.show');
