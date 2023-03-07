@@ -12,9 +12,9 @@ use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 class PayPalController extends Controller
 {
-    public function createOrder(Product $product)
+    public function createOrder()
     {
-        return view('paypal.index', compact('product'));
+        return view('paypal.index');
     }
 
 
@@ -41,9 +41,9 @@ class PayPalController extends Controller
             ]
         ]);
 
-        if (isset($response['id']) && $response['id'] != null) { // надо разобраться
+        if (isset($response['id']) && $response['id'] != null) {
 
-            foreach ($response['links'] as $links) {
+            foreach ($response['links'] as $links) { //я dd response и не совсем понял зачем этот перебор ссылок
                 if ($links['rel'] == 'approve') {
                     return redirect()->away($links['href']);
                 }
