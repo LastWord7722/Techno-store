@@ -31,7 +31,7 @@
         </div>
         <div class="row mt-4 text-center m-lg-4">
               @foreach($products as $product)
-                <div class="card mt-4 m-lg-1 border" style="width: 18rem;">
+                <div class="card mt-4 m-lg-1 border" style="width: 23rem;">
                     <img class="card-img-top" src="{{url('storage/' . $product->image)}}" alt="нема">
                     <div class="card-body">
                         <h5 class="card-title">{{$product->name}}</h5>

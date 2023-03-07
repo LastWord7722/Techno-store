@@ -18,6 +18,9 @@ Auth::routes();
 
 //PAYPAL
 route::get('/createOrder/',[PayPalController::class,'createOrder'])->name('createOrder');
+
+route::get('/basketProcessPayPal/',[PayPalController::class,'basketProcessPayPal'])->name('basketProcessPayPal');
+
 route::get('/processPaypal/{product}',[PayPalController::class,'processPaypal'])->name('processPaypal');
 route::get('/processSuccess',[PayPalController::class,'processSuccess'])->name('processSuccess');
 route::get('/processCancel',[PayPalController::class,'processCancel'])->name('processCancel');

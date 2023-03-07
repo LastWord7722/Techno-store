@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\PayPal;
 
 use App\Http\Controllers\Controller;
+use App\Models\Oreder;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,56 @@ class PayPalController extends Controller
     {
         return view('paypal.index');
     }
+
+    public function basketProcessPayPal(){
+        $orderId = session('orderId');
+        $order = Oreder::find($orderId);
+        $totalPrice = 0;
+
+        foreach ($order->products as $product){
+            $priceProduct = $product->pivot->quantity * $product->price;
+            $totalPrice += $priceProduct;
+        }
+
+        $provider = new PayPalClient;
+        $provider->setApiCredentials(config('paypal'));
+        $provider->getAccessToken();
+
+        $response = $provider->createOrder([
+            "intent" => "CAPTURE",
+            "application_context" => [
+                "return_url" => route('processSuccess',),
+                "cancel_url" => route('processCancel'),
+            ],
+            "purchase_units" => [
+                '0' => [
+                    "amount" => [
+                        "currency_code" => "USD",
+                        "value" => $totalPrice
+                    ]
+                ]
+            ]
+        ]);
+
+        if (isset($response['id']) && $response['id'] != null) {
+
+            foreach ($response['links'] as $links) {
+                if ($links['rel'] == 'approve') {
+                    return redirect()->away($links['href']);
+                }
+            }
+
+            return redirect()
+                ->route('createOrder')
+                ->with('error', 'Something went wrong.');
+
+        } else {
+            return redirect()
+                ->route('createOrder')
+                ->with('error', $response['message'] ?? 'Something went wrong.');
+        }
+    }
+
 
     public function processPaypal(Request $request, Product $product)
     {
@@ -38,6 +89,7 @@ class PayPalController extends Controller
             ]
         ]);
 
+        // нужно поместить в трейт
         if (isset($response['id']) && $response['id'] != null) {
 
             foreach ($response['links'] as $links) { //я dd response и не совсем понял зачем этот перебор ссылок
@@ -65,8 +117,9 @@ class PayPalController extends Controller
         $provider->getAccessToken();
         $response = $provider->capturePaymentOrder($request['token']);
 
+// нужно поместить в трейт
         if (isset($response['status']) && $response['status'] == 'COMPLETED') { // при условии что заказ существует и статус успешный
-            dd($response);
+
             return redirect()
                 ->route('createOrder')
                 ->with('success', 'Transaction complete.');
